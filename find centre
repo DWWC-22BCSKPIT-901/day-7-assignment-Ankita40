@@ -1,0 +1,21 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int findCenter(vector<vector<int>>& edges) {
+    // Check the first two edges to determine the center
+    if (edges[0][0] == edges[1][0] || edges[0][0] == edges[1][1]) {
+        return edges[0][0];
+    }
+    return edges[0][1];
+}
+
+int main() {
+    // Example input
+    vector<vector<int>> edges = {{1, 2}, {2, 3}, {4, 2}};
+
+    // Find and print the center of the star graph
+    cout << "Center of the star graph: " << findCenter(edges) << endl;
+
+    return 0;
+}
